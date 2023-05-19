@@ -8,6 +8,8 @@
 .buildlog/
 .history
 .svn/
+.yaml
+.lock
 migrate_working_dir/
 
 # IntelliJ related
