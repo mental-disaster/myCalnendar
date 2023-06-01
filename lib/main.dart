@@ -1,6 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:my_calendar/view/sample_view.dart';
+import 'package:my_calendar/view/table_sample.dart';
 
 void main() {
-  runApp(const SampleView());
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: TableBasicsExample(),
+    );
+  }
 }
