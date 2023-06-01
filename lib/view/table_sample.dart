@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import 'package:flutter/material.dart';
+import 'package:my_calendar/view/memo_dialog.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 import 'package:my_calendar/utils/table_util.dart';
@@ -42,6 +43,11 @@ class _TableBasicsExampleState extends State<TableBasicsExample> {
               _focusedDay = focusedDay;
             });
           }
+
+          showDialog(
+            context: context,
+            builder: (context) => MemoDialog(selectedDay: _selectedDay!,),
+          );
         },
         onPageChanged: (focusedDay) {
           // No need to call `setState()` here
