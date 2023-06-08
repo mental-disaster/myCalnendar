@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_calendar/view/table_sample.dart';
+import 'package:get/get.dart';
+import 'package:my_calendar/app/view/calendar_view.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
-  runApp(const MyApp());
+  initializeDateFormatting().then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -10,8 +12,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: TableBasicsExample(),
+    return const GetMaterialApp(
+      home: CalendarView(),
     );
   }
 }

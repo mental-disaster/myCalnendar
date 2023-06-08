@@ -1,31 +1,27 @@
 class Memo {
-  String title = '';
-  String detail = '';
-  DateTime createdDt = DateTime.now();
-  DateTime updatedDt = DateTime.now();
+  String? title;
+  String? detail;
+  DateTime? date;
 
   Memo({
-      this.title = '',
-      this.detail = '',
-      DateTime? createdDt,
-      DateTime? updatedDt,})
-      : this.createdDt = createdDt ?? DateTime.now()
-      , this.updatedDt = updatedDt ?? DateTime.now();
+      this.title,
+      this.detail,
+      DateTime? date,})
+      : date = date ?? DateTime.now();
 
-  Memo.fromJson(dynamic json) {
+  Memo.fromJson(json) {
     title = json['title'];
     detail = json['detail'];
-    createdDt = json['createdDt'];
-    updatedDt = json['updatedDt'];
+    if (json['date'] != null) {
+      date = DateTime.parse(json['date']);
+    }
   }
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['title'] = title;
     map['detail'] = detail;
-    map['createdDt'] = createdDt;
-    map['updatedDt'] = updatedDt;
+    map['date'] = date;
     return map;
   }
-
 }
