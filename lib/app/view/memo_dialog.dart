@@ -17,6 +17,11 @@ class MemoDialog extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.bold),
           )),
           const Text('memo list area'),
+          const Icon(
+            Icons.add_circle_outline,
+            color: Colors.black,
+            size: 24.0,
+          ),
         ],
       ),
     );
