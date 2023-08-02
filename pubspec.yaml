@@ -38,8 +38,9 @@ dependencies:
   table_calendar: ^3.0.9
   get: ^4.6.5
   sqflite: ^2.2.8+4
-  intl: ^0.18.1
+  intl: ^0.18.0
   freezed: ^2.3.5
+  flutter_localization: ^0.1.13
 
 dev_dependencies:
   flutter_test:

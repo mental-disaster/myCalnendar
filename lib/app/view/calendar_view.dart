@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 import 'package:my_calendar/utils/table_util.dart';
 
 class CalendarView extends StatelessWidget {
-  const CalendarView({super.key});
+  const CalendarView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,20 +20,21 @@ class CalendarView extends StatelessWidget {
         locale: 'ko-KR',
         firstDay: kFirstDay,
         lastDay: kLastDay,
-        focusedDay: CalendarController.to.focusedDay,
+        focusedDay: CalendarController.to.focusedDay.value,  // .value added here
         headerStyle: (const HeaderStyle(
           formatButtonVisible: false,
           titleCentered: true,
         )),
         onDaySelected: (selectedDay, focusedDay) {
-          CalendarController.to.selectedDay = selectedDay;
+          CalendarController.to.setFocusedDay(focusedDay);
+          CalendarController.to.setSelectedDay(selectedDay);
           showDialog(
             context: context,
             builder: (context) => const MemoDialog(),
           );
         },
         onPageChanged: (focusedDay) {
-          CalendarController.to.focusedDay = focusedDay;
+          CalendarController.to.setFocusedDay(focusedDay);
         },
       ),
     );
